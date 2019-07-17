@@ -1,0 +1,1110 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Polish\_Report},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\providecommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Polish\_Report}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{}
+    \preauthor{}\postauthor{}
+    \date{}
+    \predate{}\postdate{}
+  
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+
+\begin{document}
+\maketitle
+
+\begin{verbatim}
+## Warning: package 'gtools' was built under R version 3.5.2
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'gridExtra' was built under R version 3.5.3
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'gtable' was built under R version 3.5.3
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'knitr' was built under R version 3.5.3
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'kableExtra' was built under R version 3.5.3
+\end{verbatim}
+
+\subsection{Polish report}\label{polish-report}
+
+\section{QID04 : Listed below are different types of members. Please
+indicate for each type of member how many people/ organizations support
+your
+organization.}\label{qid04-listed-below-are-different-types-of-members.-please-indicate-for-each-type-of-member-how-many-people-organizations-support-your-organization.}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{30}{32}\selectfont
+
+\begin{tabular}{l|r|r|r|r|r|r|r|r|r|r|r|r}
+\hline
+  & 1: None &  2: Up to 10 &  3: 11-100 &  4: 101-1,000 &  5: 1,001-50,000 &  6: 50,001-100,000 &  7: 100,001 - 1 milion  &  8: 25 001-50000 &  9: 50 001- 75 000  &  10: 75 001-100 000 &  11: 100 001-1 000 000 &  12: Over 1 million\\
+\hline
+1:1 & 0.12 & 0.12 & 0.37 & 0.18 & 0.16 & 0 & 0.01 & 0 & 0 & 0 & 0.02 & 0.00\\
+\hline
+1:2 & 0.28 & 0.20 & 0.36 & 0.12 & 0.03 & 0 & 0.00 & 0 & 0 & 0 & 0.00 & 0.01\\
+\hline
+1:3 & 0.72 & 0.23 & 0.04 & 0.00 & 0.01 & 0 & 0.00 & 0 & 0 & 0 & 0.00 & 0.00\\
+\hline
+2 & 0.44 & 0.31 & 0.20 & 0.03 & 0.01 & 0 & 0.00 & 0 & 0 & 0 & 0.00 & 0.00\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\section{QID19 : Looking at the list below: Which activities is your
+organization involved in? Please tick all boxes that
+apply.}\label{qid19-looking-at-the-list-below-which-activities-is-your-organization-involved-in-please-tick-all-boxes-that-apply.}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{30}{32}\selectfont
+
+\begin{tabular}{l|r|r}
+\hline
+  & 0: No &  1: Yes\\
+\hline
+1:1 & 1 & 0\\
+\hline
+1:2 & 1 & 0\\
+\hline
+1:3 & 1 & 0\\
+\hline
+1:4 & 1 & 0\\
+\hline
+1:5 & 1 & 0\\
+\hline
+1:6 & 1 & 0\\
+\hline
+1:7 & 1 & 0\\
+\hline
+1:8 & 1 & 0\\
+\hline
+1:9 & 1 & 0\\
+\hline
+1:10 & 1 & 0\\
+\hline
+2 & 1 & 0\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\section{QID20 : How involved is your organization in these
+activities}\label{qid20-how-involved-is-your-organization-in-these-activities}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{30}{32}\selectfont
+
+\begin{tabular}{l|r|r}
+\hline
+  & 1: Somewhat involved in &  2: Very involved in\\
+\hline
+1:1 & 0.50 & 0.50\\
+\hline
+1:2 & 0.24 & 0.76\\
+\hline
+1:3 & 0.32 & 0.68\\
+\hline
+1:4 & 0.63 & 0.37\\
+\hline
+1:5 & 0.48 & 0.52\\
+\hline
+1:6 & 0.34 & 0.66\\
+\hline
+1:7 & 0.29 & 0.71\\
+\hline
+1:8 & 0.33 & 0.67\\
+\hline
+1:9 & 0.40 & 0.60\\
+\hline
+1:10 & 0.53 & 0.47\\
+\hline
+2 & 0.62 & 0.38\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\section{QID05 : How important are members to your organization with
+regard to the following
+activities?}\label{qid05-how-important-are-members-to-your-organization-with-regard-to-the-following-activities}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{30}{32}\selectfont
+
+\begin{tabular}{l|r|r|r|r|r|r}
+\hline
+  & 1: Not at all important &  2: Not very important &  3: Neither important nor unimportant &  4: Important &  5: Very important &  6: Not applicable\\
+\hline
+1:1 & 0.03 & 0.09 & 0.11 & 0.34 & 0.28 & 0.14\\
+\hline
+1:2 & 0.07 & 0.13 & 0.12 & 0.34 & 0.19 & 0.15\\
+\hline
+1:3 & 0.01 & 0.05 & 0.05 & 0.37 & 0.49 & 0.02\\
+\hline
+1:4 & 0.03 & 0.09 & 0.08 & 0.49 & 0.26 & 0.04\\
+\hline
+1:5 & 0.04 & 0.07 & 0.08 & 0.31 & 0.40 & 0.09\\
+\hline
+2 & 0.05 & 0.08 & 0.06 & 0.24 & 0.54 & 0.03\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\section{QID61 : Just as your organization, these European /
+international organizations or networks need support and resources. How
+do you support these organizations? Please tick all boxes that
+apply.}\label{qid61-just-as-your-organization-these-european-international-organizations-or-networks-need-support-and-resources.-how-do-you-support-these-organizations-please-tick-all-boxes-that-apply.}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{30}{32}\selectfont
+
+\begin{tabular}{l|r|r}
+\hline
+  & 0: No &  1: Yes\\
+\hline
+1:1 & 1 & 0\\
+\hline
+1:2 & 1 & 0\\
+\hline
+1:3 & 1 & 0\\
+\hline
+1:4 & 1 & 0\\
+\hline
+1:5 & 1 & 0\\
+\hline
+1:6 & 1 & 0\\
+\hline
+1:7 & 1 & 0\\
+\hline
+1:8 & 1 & 0\\
+\hline
+2 & 1 & 0\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\section{QID62 : How would you rate your influence in the
+decision-making and activities of these
+organizations?}\label{qid62-how-would-you-rate-your-influence-in-the-decision-making-and-activities-of-these-organizations}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{30}{32}\selectfont
+
+\begin{tabular}{l|r|r|r|r}
+\hline
+  & 1: Not at all influential &  2: Not very influential &  3: Somewhat influential &  4: Very influential\\
+\hline
+1:1 & 0.04 & 0.37 & 0.45 & 0.15\\
+\hline
+1:2 & 0.05 & 0.84 & 0.00 & 0.11\\
+\hline
+2 & 0.00 & 0.39 & 0.44 & 0.17\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\section{QID63 : In general, how beneficial have these organizations
+been in performing the following tasks and
+functions?}\label{qid63-in-general-how-beneficial-have-these-organizations-been-in-performing-the-following-tasks-and-functions}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{30}{32}\selectfont
+
+\begin{tabular}{l|r|r|r}
+\hline
+  & 1: Very beneficial  &  2: Somehwat beneficial &  3: Hardly beneficial\\
+\hline
+1:1 & 0.48 & 0.43 & 0.08\\
+\hline
+1:2 & 0.12 & 0.32 & 0.56\\
+\hline
+1:3 & 0.35 & 0.49 & 0.16\\
+\hline
+1:4 & 0.32 & 0.48 & 0.20\\
+\hline
+2 & 0.29 & 0.53 & 0.18\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\section{QID10 : Does your organization have any of the
+following}\label{qid10-does-your-organization-have-any-of-the-following}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{30}{32}\selectfont
+
+\begin{tabular}{l|r|r}
+\hline
+  & 0: No &  1: Yes\\
+\hline
+1:1 & 1 & 0\\
+\hline
+1:2 & 1 & 0\\
+\hline
+1:3 & 1 & 0\\
+\hline
+1:4 & 1 & 0\\
+\hline
+1:5 & 1 & 0\\
+\hline
+1:6 & 1 & 0\\
+\hline
+1:7 & 1 & 0\\
+\hline
+2 & 1 & 0\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\section{QID11 : Organizations like yours can make decisions in
+different ways, such as consensus among individual members or board
+members or by voting procedures. Can you please indicate below how your
+organizationÃÂ~primarilyÃÂ~makes decisions in the following
+areas?}\label{qid11-organizations-like-yours-can-make-decisions-in-different-ways-such-as-consensus-among-individual-members-or-board-members-or-by-voting-procedures.-can-you-please-indicate-below-how-your-organizationaaprimarilyaamakes-decisions-in-the-following-areas}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{30}{32}\selectfont
+
+\begin{tabular}{l|r|r|r|r|r|r|r}
+\hline
+  & 1: Consensus among members &  2: Voting among the members &  3: Consensus in board &  4: Voting in the board &  5: Senior staff take these decisions &  6: Other &  7: Not applicable\\
+\hline
+1:1 & 0.04 & 0.28 & 0.23 & 0.34 & 0.05 & 0.05 & 0\\
+\hline
+1:2 & 0.02 & 0.04 & 0.31 & 0.30 & 0.25 & 0.08 & 0\\
+\hline
+1:3 & 0.08 & 0.59 & 0.07 & 0.06 & 0.06 & 0.14 & 0\\
+\hline
+1:4 & 0.05 & 0.52 & 0.11 & 0.17 & 0.03 & 0.11 & 0\\
+\hline
+1:5 & 0.04 & 0.17 & 0.20 & 0.39 & 0.06 & 0.13 & 0\\
+\hline
+1:6 & 0.06 & 0.61 & 0.08 & 0.12 & 0.05 & 0.08 & 0\\
+\hline
+1:7 & 0.05 & 0.10 & 0.33 & 0.38 & 0.10 & 0.04 & 0\\
+\hline
+2 & 0.08 & 0.15 & 0.31 & 0.32 & 0.10 & 0.05 & 0\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\section{QID12 : Thinking about your organizationÃ¢â¬â¢s position on
+public policies, how would you rate the influence of the following
+actors?}\label{qid12-thinking-about-your-organizationaaas-position-on-public-policies-how-would-you-rate-the-influence-of-the-following-actors}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{30}{32}\selectfont
+
+\begin{tabular}{l|r|r|r|r|r}
+\hline
+  & 1: Very influential &  2: Somewhat influential &  3: Not very influential &  4: Not at all influential &  5: Not applicable\\
+\hline
+1:1 & 0.10 & 0.40 & 0.28 & 0.22 & 0\\
+\hline
+1:2 & 0.38 & 0.45 & 0.14 & 0.04 & 0\\
+\hline
+1:3 & 0.43 & 0.41 & 0.13 & 0.03 & 0\\
+\hline
+1:4 & 0.73 & 0.21 & 0.05 & 0.01 & 0\\
+\hline
+1:5 & 0.45 & 0.36 & 0.13 & 0.07 & 0\\
+\hline
+1:6 & 0.14 & 0.45 & 0.30 & 0.11 & 0\\
+\hline
+1:7 & 0.21 & 0.38 & 0.24 & 0.16 & 0\\
+\hline
+1:8 & 0.04 & 0.41 & 0.39 & 0.15 & 0\\
+\hline
+1:9 & 0.04 & 0.34 & 0.28 & 0.33 & 0\\
+\hline
+2 & 0.12 & 0.37 & 0.29 & 0.22 & 0\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\section{QID13 : Thinking about your organization's decisions on
+political strategies, how would you rate the relative influence of the
+following
+actors}\label{qid13-thinking-about-your-organizations-decisions-on-political-strategies-how-would-you-rate-the-relative-influence-of-the-following-actors}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{30}{32}\selectfont
+
+\begin{tabular}{l|r|r|r|r|r}
+\hline
+  & 1: Very influential &  2: Somewhat influential &  3: Not very influential &  4: Not at all influential &  5: Not applicable\\
+\hline
+1:1 & 0.04 & 0.34 & 0.37 & 0.25 & 0\\
+\hline
+1:2 & 0.32 & 0.47 & 0.17 & 0.05 & 0\\
+\hline
+1:3 & 0.45 & 0.34 & 0.15 & 0.06 & 0\\
+\hline
+1:4 & 0.69 & 0.24 & 0.05 & 0.02 & 0\\
+\hline
+1:5 & 0.52 & 0.33 & 0.08 & 0.06 & 0\\
+\hline
+1:6 & 0.11 & 0.48 & 0.24 & 0.17 & 0\\
+\hline
+1:7 & 0.09 & 0.43 & 0.32 & 0.17 & 0\\
+\hline
+1:8 & 0.03 & 0.39 & 0.40 & 0.18 & 0\\
+\hline
+1:9 & 0.05 & 0.32 & 0.35 & 0.28 & 0\\
+\hline
+2 & 0.09 & 0.42 & 0.25 & 0.24 & 0\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\section{QID15 : Does your organization ever collaborate with other
+organizations in any of the following
+activities}\label{qid15-does-your-organization-ever-collaborate-with-other-organizations-in-any-of-the-following-activities}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{30}{32}\selectfont
+
+\begin{tabular}{l|r|r}
+\hline
+  & 0: No &  1: Yes\\
+\hline
+1:1 & 1 & 0\\
+\hline
+1:2 & 1 & 0\\
+\hline
+1:3 & 1 & 0\\
+\hline
+1:4 & 1 & 0\\
+\hline
+1:5 & 1 & 0\\
+\hline
+1:6 & 1 & 0\\
+\hline
+2 & 1 & 0\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\section{QID16 : Which areas is your organization involved
+in}\label{qid16-which-areas-is-your-organization-involved-in}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{30}{32}\selectfont
+
+\begin{tabular}{l|r|r}
+\hline
+  & 0: No &  1: Yes\\
+\hline
+1:1 & 1 & 0\\
+\hline
+1:2 & 1 & 0\\
+\hline
+1:3 & 1 & 0\\
+\hline
+1:4 & 1 & 0\\
+\hline
+1:5 & 1 & 0\\
+\hline
+1:6 & 1 & 0\\
+\hline
+1:7 & 1 & 0\\
+\hline
+1:8 & 1 & 0\\
+\hline
+1:9 & 1 & 0\\
+\hline
+1:10 & 1 & 0\\
+\hline
+1:11 & 1 & 0\\
+\hline
+1:12 & 1 & 0\\
+\hline
+1:13 & 1 & 0\\
+\hline
+1:14 & 1 & 0\\
+\hline
+1:15 & 1 & 0\\
+\hline
+1:16 & 1 & 0\\
+\hline
+1:17 & 1 & 0\\
+\hline
+1:18 & 1 & 0\\
+\hline
+1:19 & 1 & 0\\
+\hline
+1:20 & 1 & 0\\
+\hline
+1:21 & 1 & 0\\
+\hline
+1:22 & 1 & 0\\
+\hline
+2 & 1 & 0\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\section{QID17 : How involved is your organization in these
+areas}\label{qid17-how-involved-is-your-organization-in-these-areas}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{30}{32}\selectfont
+
+\begin{tabular}{l|r|r}
+\hline
+  & 1: Somewhat involved in &  2: Very involved in\\
+\hline
+1:1 & 0.74 & 0.26\\
+\hline
+1:2 & 0.53 & 0.47\\
+\hline
+1:3 & 0.24 & 0.76\\
+\hline
+1:4 & 0.57 & 0.43\\
+\hline
+1:5 & 0.47 & 0.53\\
+\hline
+1:6 & 0.37 & 0.63\\
+\hline
+1:7 & 0.40 & 0.60\\
+\hline
+1:8 & 0.39 & 0.61\\
+\hline
+1:9 & 0.45 & 0.55\\
+\hline
+1:10 & 0.56 & 0.44\\
+\hline
+1:11 & 0.27 & 0.73\\
+\hline
+1:12 & 0.41 & 0.59\\
+\hline
+1:13 & 0.43 & 0.57\\
+\hline
+1:14 & 0.63 & 0.37\\
+\hline
+1:15 & 0.50 & 0.50\\
+\hline
+1:16 & 0.57 & 0.42\\
+\hline
+1:17 & 0.56 & 0.44\\
+\hline
+1:18 & 0.57 & 0.43\\
+\hline
+1:19 & 0.33 & 0.67\\
+\hline
+1:20 & 0.36 & 0.64\\
+\hline
+1:21 & 0.52 & 0.48\\
+\hline
+1:22 & 0.31 & 0.69\\
+\hline
+2 & 0.15 & 0.85\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\section{QID22 : What are the typical backgrounds of your paid staff
+members}\label{qid22-what-are-the-typical-backgrounds-of-your-paid-staff-members}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{30}{32}\selectfont
+
+\begin{tabular}{l|r|r}
+\hline
+  & 0: No &  1: Yes\\
+\hline
+1:1 & 1 & 0\\
+\hline
+1:2 & 1 & 0\\
+\hline
+1:3 & 1 & 0\\
+\hline
+1:4 & 1 & 0\\
+\hline
+1:5 & 1 & 0\\
+\hline
+1:6 & 1 & 0\\
+\hline
+1:7 & 1 & 0\\
+\hline
+1:8 & 1 & 0\\
+\hline
+2 & 1 & 0\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\section{QID24 : Does your organization engage in any of the following
+staff development
+activities}\label{qid24-does-your-organization-engage-in-any-of-the-following-staff-development-activities}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{30}{32}\selectfont
+
+\begin{tabular}{l|r|r}
+\hline
+  & 0: No &  1: Yes\\
+\hline
+1:1 & 1 & 0\\
+\hline
+1:2 & 1 & 0\\
+\hline
+1:3 & 1 & 0\\
+\hline
+2 & 1 & 0\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\section{QID26 : If staff leave your organization for positions in other
+organizations, where do they typically continue their professional
+career?}\label{qid26-if-staff-leave-your-organization-for-positions-in-other-organizations-where-do-they-typically-continue-their-professional-career}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{30}{32}\selectfont
+
+\begin{tabular}{l|r|r}
+\hline
+  & 0: No &  1: Yes\\
+\hline
+1:1 & 1 & 0\\
+\hline
+1:2 & 1 & 0\\
+\hline
+1:3 & 1 & 0\\
+\hline
+1:4 & 1 & 0\\
+\hline
+1:5 & 1 & 0\\
+\hline
+1:6 & 1 & 0\\
+\hline
+1:7 & 1 & 0\\
+\hline
+2 & 1 & 0\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\section{QID28 : What indicators does your organization use to measure
+and evaluate the effectiveness and efficiency of its activities and
+processes?}\label{qid28-what-indicators-does-your-organization-use-to-measure-and-evaluate-the-effectiveness-and-efficiency-of-its-activities-and-processes}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{30}{32}\selectfont
+
+\begin{tabular}{l|r|r}
+\hline
+  & 0: No &  1: Yes\\
+\hline
+1:1 & 1 & 0\\
+\hline
+1:2 & 1 & 0\\
+\hline
+1:3 & 1 & 0\\
+\hline
+1:4 & 1 & 0\\
+\hline
+1:5 & 1 & 0\\
+\hline
+1:6 & 1 & 0\\
+\hline
+1:7 & 1 & 0\\
+\hline
+1:8 & 1 & 0\\
+\hline
+1:9 & 1 & 0\\
+\hline
+1:10 & 1 & 0\\
+\hline
+2 & 1 & 0\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\section{QID29 : How important are the following political challenges
+for your
+organization?}\label{qid29-how-important-are-the-following-political-challenges-for-your-organization}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{30}{32}\selectfont
+
+\begin{tabular}{l|r|r|r|r|r}
+\hline
+  & 1: Not at all important &  2: Not very important &  3: Neither important nor unimportant &  4: Important &  5: Very important\\
+\hline
+1:1 & 0.38 & 0.13 & 0.19 & 0.26 & 0.05\\
+\hline
+1:2 & 0.39 & 0.11 & 0.20 & 0.23 & 0.07\\
+\hline
+1:3 & 0.30 & 0.12 & 0.18 & 0.29 & 0.12\\
+\hline
+1:4 & 0.43 & 0.15 & 0.26 & 0.12 & 0.04\\
+\hline
+1:5 & 0.30 & 0.13 & 0.24 & 0.23 & 0.10\\
+\hline
+1:6 & 0.31 & 0.10 & 0.15 & 0.28 & 0.15\\
+\hline
+1:7 & 0.43 & 0.12 & 0.20 & 0.21 & 0.05\\
+\hline
+1:8 & 0.41 & 0.14 & 0.18 & 0.23 & 0.05\\
+\hline
+1:9 & 0.16 & 0.07 & 0.09 & 0.42 & 0.27\\
+\hline
+1:10 & 0.36 & 0.13 & 0.19 & 0.25 & 0.07\\
+\hline
+1:11 & 0.25 & 0.11 & 0.11 & 0.36 & 0.17\\
+\hline
+1:12 & 0.35 & 0.12 & 0.17 & 0.20 & 0.17\\
+\hline
+1:13 & 0.28 & 0.11 & 0.16 & 0.30 & 0.15\\
+\hline
+1:14 & 0.34 & 0.15 & 0.21 & 0.22 & 0.08\\
+\hline
+1:15 & 0.44 & 0.11 & 0.21 & 0.16 & 0.09\\
+\hline
+2 & 0.35 & 0.16 & 0.19 & 0.26 & 0.04\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\section{QID69 : How important are the following challenges for the
+maintenance of your
+organization?}\label{qid69-how-important-are-the-following-challenges-for-the-maintenance-of-your-organization}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{30}{32}\selectfont
+
+\begin{tabular}{l|r|r|r|r|r}
+\hline
+  & 1: Not at all important &  2: Not very important &  3: Neither important nor unimportant &  4: Important &  5: Very important\\
+\hline
+1:1 & 0.17 & 0.18 & 0.17 & 0.38 & 0.10\\
+\hline
+1:2 & 0.30 & 0.09 & 0.17 & 0.30 & 0.14\\
+\hline
+1:3 & 0.19 & 0.09 & 0.09 & 0.42 & 0.22\\
+\hline
+1:4 & 0.20 & 0.08 & 0.13 & 0.43 & 0.17\\
+\hline
+1:5 & 0.37 & 0.12 & 0.27 & 0.22 & 0.02\\
+\hline
+1:6 & 0.22 & 0.09 & 0.15 & 0.36 & 0.17\\
+\hline
+1:7 & 0.33 & 0.17 & 0.21 & 0.24 & 0.04\\
+\hline
+1:8 & 0.38 & 0.13 & 0.21 & 0.22 & 0.05\\
+\hline
+1:9 & 0.24 & 0.08 & 0.13 & 0.33 & 0.22\\
+\hline
+1:10 & 0.33 & 0.11 & 0.19 & 0.28 & 0.08\\
+\hline
+2 & 0.38 & 0.15 & 0.25 & 0.19 & 0.02\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\section{QID33 : During the last 12 months, how often has your
+organization actively sought access to the following national level
+institutions and agencies in order to influence public
+policies}\label{qid33-during-the-last-12-months-how-often-has-your-organization-actively-sought-access-to-the-following-national-level-institutions-and-agencies-in-order-to-influence-public-policies}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{30}{32}\selectfont
+
+\begin{tabular}{l|r|r|r|r|r}
+\hline
+  & 1: We did not seek access &  2: At least once &  3: At least once every three months &  4: At least once a month &  5: At least once a week\\
+\hline
+1:1 & 0.41 & 0.25 & 0.24 & 0.08 & 0.03\\
+\hline
+1:2 & 0.51 & 0.23 & 0.19 & 0.05 & 0.02\\
+\hline
+1:3 & 0.48 & 0.30 & 0.15 & 0.04 & 0.02\\
+\hline
+1:4 & 0.65 & 0.21 & 0.11 & 0.02 & 0.00\\
+\hline
+1:5 & 0.35 & 0.26 & 0.22 & 0.12 & 0.04\\
+\hline
+1:6 & 0.67 & 0.22 & 0.09 & 0.01 & 0.00\\
+\hline
+2 & 0.78 & 0.14 & 0.05 & 0.03 & 0.01\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\section{QID34 : During the last 12 months, how often has your
+organization engaged in the following activities to try to affect or
+influence public
+policies}\label{qid34-during-the-last-12-months-how-often-has-your-organization-engaged-in-the-following-activities-to-try-to-affect-or-influence-public-policies}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{30}{32}\selectfont
+
+\begin{tabular}{l|r|r|r|r|r}
+\hline
+  & 1: We did not do this &  2: At least once &  3: At least once every three months &  4: At least once a month &  5: At least once a week\\
+\hline
+1:1 & 0.48 & 0.23 & 0.17 & 0.08 & 0.04\\
+\hline
+1:2 & 0.40 & 0.32 & 0.19 & 0.07 & 0.01\\
+\hline
+1:3 & 0.39 & 0.23 & 0.16 & 0.17 & 0.05\\
+\hline
+1:4 & 0.74 & 0.16 & 0.07 & 0.02 & 0.01\\
+\hline
+1:5 & 0.34 & 0.27 & 0.19 & 0.11 & 0.08\\
+\hline
+1:6 & 0.54 & 0.23 & 0.13 & 0.07 & 0.02\\
+\hline
+1:7 & 0.83 & 0.09 & 0.04 & 0.02 & 0.02\\
+\hline
+1:8 & 0.40 & 0.18 & 0.16 & 0.17 & 0.08\\
+\hline
+1:9 & 0.95 & 0.05 & 0.00 & 0.00 & 0.00\\
+\hline
+1:10 & 0.42 & 0.27 & 0.22 & 0.07 & 0.02\\
+\hline
+2 & 0.89 & 0.06 & 0.04 & 0.00 & 0.00\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\section{QID35 : During the last 12 months, how often has your
+organization been involved in any of the following
+activities}\label{qid35-during-the-last-12-months-how-often-has-your-organization-been-involved-in-any-of-the-following-activities}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{30}{32}\selectfont
+
+\begin{tabular}{l|r|r|r|r|r}
+\hline
+  & 1: We did not do this &  2: At least once &  3: At least once every three months &  4: At least once a month &  5: At least once a week\\
+\hline
+1:1 & 0.39 & 0.32 & 0.18 & 0.09 & 0.03\\
+\hline
+1:2 & 0.21 & 0.27 & 0.30 & 0.17 & 0.05\\
+\hline
+1:3 & 0.40 & 0.28 & 0.18 & 0.13 & 0.01\\
+\hline
+1:4 & 0.69 & 0.23 & 0.07 & 0.00 & 0.00\\
+\hline
+2 & 0.75 & 0.18 & 0.06 & 0.01 & 0.01\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\section{QID71 : Were these processes initiated in a national or an
+international/European
+court?}\label{qid71-were-these-processes-initiated-in-a-national-or-an-internationaleuropean-court}
+
+\begin{tabular}{l|r|r|r|r|r|r|r}
+\hline
+  & . & konsultacje spoÃâeczne & organy ustawodawcze & petycje & rozwiÃâ¦zania prawne niekorzystne dla dziaÃâalnoÃâºci czÃâonkÃÂ³w & samorzÃâ¦d lokalny & wpisanie na listÃâ¢ Prezesa UTK - podmioty uprawnione do przyÃâÃâ¦czania siÃâ¢ do postÃâ¢powaÃâ administracyjnych\\
+\hline
+V1 & 1 & 0 & 0 & 0 & 0 & 0 & 0\\
+\hline
+\end{tabular}
+
+\section{QID38 : Political institutions and actors seek different types
+of information from organizations like yours. Thinking about the
+information your organization supplies to these institutions, please
+rate how important the following types of information are for
+policymakers.}\label{qid38-political-institutions-and-actors-seek-different-types-of-information-from-organizations-like-yours.-thinking-about-the-information-your-organization-supplies-to-these-institutions-please-rate-how-important-the-following-types-of-information-are-for-policymakers.}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{30}{32}\selectfont
+
+\begin{tabular}{l|r|r|r|r|r}
+\hline
+  & 1: Very important &  2: Somewhat important &  3: Not very important &  4: Not at all important &  5: Not applicable\\
+\hline
+1:1 & 0.27 & 0.45 & 0.13 & 0.15 & 0\\
+\hline
+1:2 & 0.26 & 0.47 & 0.14 & 0.13 & 0\\
+\hline
+1:3 & 0.25 & 0.49 & 0.16 & 0.10 & 0\\
+\hline
+1:4 & 0.25 & 0.46 & 0.16 & 0.13 & 0\\
+\hline
+2 & 0.18 & 0.29 & 0.29 & 0.25 & 0\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\section{QID40 : Interactions between civil society actors and
+policymakers can be initiated by either side. On average, how often does
+your organization initiate contact with policymakers and how often do
+policymakers initiate contact with your organization? Please tick one
+box in every
+row.}\label{qid40-interactions-between-civil-society-actors-and-policymakers-can-be-initiated-by-either-side.-on-average-how-often-does-your-organization-initiate-contact-with-policymakers-and-how-often-do-policymakers-initiate-contact-with-your-organization-please-tick-one-box-in-every-row.}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{30}{32}\selectfont
+
+\begin{tabular}{r|r|r|r|r}
+\hline
+1: Never &  2: At least once &  3: At least once every three months &  4: At least once a month &  5: At least once a week\\
+\hline
+0.32 & 0.32 & 0.24 & 0.09 & 0.02\\
+\hline
+0.51 & 0.31 & 0.15 & 0.02 & 0.01\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\section{QID31 : During the last 12 months, how often has your group
+actively sought access to the following EU-level institutions and
+agencies in order to influence public
+policies?}\label{qid31-during-the-last-12-months-how-often-has-your-group-actively-sought-access-to-the-following-eu-level-institutions-and-agencies-in-order-to-influence-public-policies}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{30}{32}\selectfont
+
+\begin{tabular}{l|r|r|r|r|r}
+\hline
+  & 1: We did not seek access &  2: At least once &  3: At least once every three months &  4: At least once a month &  5: At least once a week\\
+\hline
+1:1 & 0.84 & 0.12 & 0.03 & 0.01 & 0\\
+\hline
+1:2 & 0.84 & 0.13 & 0.03 & 0.00 & 0\\
+\hline
+1:3 & 0.80 & 0.16 & 0.04 & 0.00 & 0\\
+\hline
+1:4 & 0.92 & 0.06 & 0.01 & 0.00 & 0\\
+\hline
+1:5 & 0.88 & 0.10 & 0.02 & 0.00 & 0\\
+\hline
+1:6 & 0.74 & 0.19 & 0.06 & 0.00 & 0\\
+\hline
+1:7 & 0.85 & 0.13 & 0.03 & 0.00 & 0\\
+\hline
+2 & 0.75 & 0.18 & 0.05 & 0.02 & 0\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\section{QID43 : In general, how would you characterize the relationship
+between your organization and European and national
+authorities?}\label{qid43-in-general-how-would-you-characterize-the-relationship-between-your-organization-and-european-and-national-authorities}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{30}{32}\selectfont
+
+\begin{tabular}{r|r|r|r|r}
+\hline
+1: Very co-operative &  2: Moderately co-operative &  3: Moderately conflictual &  4: Very conflictual &  5: Not applicable\\
+\hline
+0.16 & 0.77 & 0.07 & 0.00 & 0\\
+\hline
+0.19 & 0.53 & 0.23 & 0.06 & 0\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\section{QID44 : How would you rate your organizationÃ¢â¬â¢s influence
+on public policy compared to that of your allies and
+opponents?}\label{qid44-how-would-you-rate-your-organizationaaas-influence-on-public-policy-compared-to-that-of-your-allies-and-opponents}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{30}{32}\selectfont
+
+\begin{tabular}{r|r|r|r|r}
+\hline
+1: More influence &  2: Roughly the same influence &  3: Less influence &  4: We have no allies/opponents &  5: Don't know\\
+\hline
+0.20 & 0.55 & 0.08 & 0.17 & 0\\
+\hline
+0.23 & 0.35 & 0.17 & 0.25 & 0\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\section{QID47 : As part of your job, which areas are you regularly
+involved
+in}\label{qid47-as-part-of-your-job-which-areas-are-you-regularly-involved-in}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{30}{32}\selectfont
+
+\begin{tabular}{l|r|r}
+\hline
+  & 0: No &  1: Yes\\
+\hline
+1:1 & 1.00 & 0.00\\
+\hline
+1:2 & 1.00 & 0.00\\
+\hline
+1:3 & 1.00 & 0.00\\
+\hline
+1:4 & 1.00 & 0.00\\
+\hline
+1:5 & 1.00 & 0.00\\
+\hline
+1:6 & 1.00 & 0.00\\
+\hline
+1:7 & 1.00 & 0.00\\
+\hline
+1:8 & 1.00 & 0.00\\
+\hline
+1:9 & 1.00 & 0.00\\
+\hline
+2 & 0.62 & 0.38\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+\section{QID48 : What is your career
+background?}\label{qid48-what-is-your-career-background}
+
+\begin{table}[H]
+\centering\begingroup\fontsize{30}{32}\selectfont
+
+\begin{tabular}{l|r|r}
+\hline
+  & 0: No &  1: Yes\\
+\hline
+1:1 & 1 & 0\\
+\hline
+1:2 & 1 & 0\\
+\hline
+1:3 & 1 & 0\\
+\hline
+1:4 & 1 & 0\\
+\hline
+1:5 & 1 & 0\\
+\hline
+1:6 & 1 & 0\\
+\hline
+1:7 & 1 & 0\\
+\hline
+1:8 & 1 & 0\\
+\hline
+2 & 1 & 0\\
+\hline
+\end{tabular}
+\endgroup{}
+\end{table}
+
+
+\end{document}

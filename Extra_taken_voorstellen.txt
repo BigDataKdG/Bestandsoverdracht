@@ -1,0 +1,5 @@
+- EU survey niet in overeenstemming met rest
+- missing values clean up (blanks, zero, marks, NA, -9998...)
+- cleaning van onlogische waarden (bv q09 boven de 100)
+- tot 1 survey bestand komen
+- system nog niet volledig of afwijkend: q16_other bv => staat nog niet volledig juist

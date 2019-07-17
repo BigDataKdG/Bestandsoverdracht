@@ -1,0 +1,3 @@
+- in het systeem moet er een kolom gemaakt worden voor de Portugese data
+- lijntje bijmaken in de manual voor nieuwe landen
+- 

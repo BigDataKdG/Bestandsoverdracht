@@ -1,0 +1,167 @@
+---
+title: "Polish_Report"
+output:
+  pdf_document:
+    df_print: kable
+    latex_engine: xelatex
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+
+```{r message=FALSE, echo=FALSE}
+home = "C:/Users/Fheylen"
+
+#home = "~"
+wd <- paste(home,"/Dropbox/Bestandoverdracht/Data/FW__CIG_Survey_Polish_Data", sep = "")
+setwd(wd)
+
+# install.packages('rmarkdown')
+# install.packages("tinytex")
+# tinytex::install_tinytex()
+
+library("car")
+library("gtools")
+library("grid")
+library("gridExtra")
+library("gtable")
+library("knitr")
+library("kableExtra")
+
+df <- read.csv2("Polish survey dataset_csv.csv", sep=",")
+options(stringsAsFactors = F)
+{
+  df$q16p_23 <- df$q16_23pl 
+  df$q16_23pl <- NULL 
+  
+  df$q32p_23 <- df$q32pl_01
+  df$q32p_23 <- df$q32pl_02
+  df$q32p_23 <- df$q32pl_03
+  df$q32p_23 <- df$q32pl_04
+  df$q32p_23 <- df$q32pl_05 
+  df$q32p_23 <- df$q32pl_06
+  df$q32p_23 <- df$q32pl_07
+  
+  
+  df$q32pl_01 <- NULL
+  df$q32pl_02 <- NULL
+  df$q32pl_03 <- NULL
+  df$q32pl_04 <- NULL
+  df$q32pl_05 <- NULL
+  df$q32pl_06 <- NULL
+  df$q32pl_07 <- NULL
+  
+  df$q52 <- Recode(df$q52, "-5:-1=NA")
+  
+  df$q52p_02 <- df$q52pl_02
+  
+  df$q52pl_02 <- NULL 
+  
+  df$q54 <- Recode(df$q54, "1=0;2=1;3=2;4=3;5=4;6=5;7=6;8=7;9=8;10=9;11=10")
+  
+  df$q55 <- Recode(df$q55, "1=0;2=1;3=2;4=3;5=4;6=5;7=6;8=7;9=8;10=9;11=10")
+  df$q56 <- Recode(df$q56, "1=0;2=1;3=2;4=3;5=4;6=5;7=6;8=7;9=8;10=9;11=10")
+  df$q53 <- Recode(df$q53, "1=0;2=1;3=2;4=3;5=4;6=5;7=6;8=7;9=8;10=9;11=10")
+}
+```
+
+## Polish report
+
+```{r echo=FALSE, message=FALSE, results='asis'}
+rapport_maker <- function(df) {
+  
+  vid <- read.csv2("vid.csv")
+  stamList <- c("some initialization because R is too stupid to deal with empty vectors when using grepl?")
+  for(i in 1:length(names(df))) {
+    volgnummer <- i
+    
+    naam <- names(df)[i]
+    stam <- substring(naam, 0, regexpr("_", naam)) #vindt stam van de variabelen set
+    
+    if (is.element(stam, stamList)) {
+      message(volgnummer, " is geskipt")
+      next()
+    } else {
+      stamList <- c(stamList, stam)
+    }
+    
+    #als er geen match wordt gevonden is de stam leeg, waarna deze lege string matched met alle variabelen
+    if (stam != "")  {
+      set <- grep(stam, names(df), value = TRUE)
+    } else {
+      set <- naam 
+    }
+    
+    len <- length(set) # lengte van de set
+    
+    vraag <-vid[which(vid$VID == naam ),which(names(vid)=="QID.Text")] 
+  
+    if (identical(vraag, character(0))) {
+      message(volgnummer,". " ," ", "Voor variabele -",naam , "- geen match gevonden in file! Deze verwerking is overgeslagen.")
+      next()
+    }
+    
+    if (typeof(df[[i]]) == "character" ) {
+      message(volgnummer,". " ," ", "Variabele -",naam , "- is van type STRING! Deze verwerking is overgeslagen.")
+      next()
+    }
+    
+    if (length(as.data.frame(as.matrix(table(df[[i]])))[[1]]) > 15) {
+      message(volgnummer," ", naam, " werd overgeslagen omdat het aantal categorie? n hoger was dan 15.")
+      next()
+    }
+    
+    qid <- vid[which(vid$VID == naam ),which(names(vid)=="QID")] 
+    qid_text <- vid[which(vid$VID == naam ),which(names(vid)=="QID.Text")] 
+    vid_text <- vid[which(vid$VID == naam ),which(names(vid)=="VID.Text")] 
+    
+    #als responses.P leeg is, maak dan gebruik van responses general
+    if (identical(vid[which(vid$VID == naam ),which(names(vid)=="Responses.P")],"")) {
+      labels <- vid[which(vid$VID == naam ),which(names(vid)=="Responses")]
+    } else {
+      labels <- vid[which(vid$VID == naam ),which(names(vid)=="Responses.P")]
+    }
+    cat('\n#', qid, ': ', qid_text, '\n')
+    x <- sapply(labels, function(x) strsplit(x, ";")[[1]], USE.NAMES=FALSE)
+    if (len==1) {
+      table <- t(round(as.data.frame(as.matrix(prop.table(table(df[[i]])))),2))
+      print(kable(head(table)))
+      message(volgnummer," ",naam," werd verwerkt")
+      
+    } else{
+      for (i in 1:length(set)) {
+        if (i==1) {
+          df[[ which(names(df)==set[i]) ]] <- factor(df[[ which(names(df)==set[i]) ]], labels = x, levels = 1:length(x) )
+          
+          df_resultaat <-  round( as.data.frame(  as.matrix ( prop.table( table( df[[  which(names(df) == set[1])  ]] ) ) )),2)
+          names(df_resultaat)[1] <- set[1]
+          
+          df_resultaat <- t(df_resultaat)
+          
+          message(volgnummer," ", set[i]," werd verwerkt")
+        } else {
+          
+          df[[ which(names(df)==set[i]) ]] <- factor(df[[ which(names(df)==set[i]) ]], labels = x, levels = 1:length(x) )
+          
+          df_resultaat_1 <-  round( as.data.frame(  as.matrix ( prop.table( table( df[[  which(names(df) == set[i])  ]] ) ) )),2)
+          names(df_resultaat_1)[1] <- set[i]
+          
+          df_resultaat_1 <- t(df_resultaat_1)
+          
+          df_resultaat <- smartbind(df_resultaat, df_resultaat_1) #probleem hier is nog als het eerste antwoord niet alle cat's heeft, dat ze ook niet gebonden zullen wor
+          message(volgnummer," ",set[i]," werd verwerkt")
+        } 
+      }
+    print( kable(df_resultaat) %>%
+  kable_styling(bootstrap_options = "striped", font_size = 30)
+           )
+    }
+  }
+}
+rapport_maker(df)
+```
